@@ -185,7 +185,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oSv-vg-JEa" firstAttribute="centerX" secondItem="ceB-QM-sUZ" secondAttribute="centerX" id="Bgr-tj-dTN"/>
                             <constraint firstItem="oSv-vg-JEa" firstAttribute="centerY" secondItem="ceB-QM-sUZ" secondAttribute="centerY" id="dTg-Wc-PtG"/>
@@ -295,7 +295,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6jr-4b-hmx" firstAttribute="centerX" secondItem="W50-0k-8Fu" secondAttribute="centerX" id="UcH-e1-Qxz"/>
                             <constraint firstItem="6jr-4b-hmx" firstAttribute="centerY" secondItem="W50-0k-8Fu" secondAttribute="centerY" id="UjU-6e-1eB"/>
@@ -379,7 +379,7 @@
                                 </connections>
                             </switch>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PDm-pq-Ij6" firstAttribute="centerX" secondItem="Mz3-QM-PaS" secondAttribute="centerX" id="1XU-LP-LFS"/>
                             <constraint firstItem="CkR-JZ-eNX" firstAttribute="centerY" secondItem="Mz3-QM-PaS" secondAttribute="centerY" id="2Sa-Eb-im0"/>

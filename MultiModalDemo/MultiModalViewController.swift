@@ -82,8 +82,8 @@ class MultiModalViewController : UIViewController
     else
     {
       addChild(newVC)
-      newVC.managedView.frame = self.view.frame
-      self.view.addSubview(newVC.managedView)
+      newVC.view.frame = self.view.frame
+      self.view.addSubview(newVC.view)
       newVC.didMove(toParent: self)
     }
   }

@@ -26,15 +26,9 @@ class BlueViewController: UIViewController, ManagedViewController
   
   var n : [Int] = [0, 0]
   
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    debug("RedVC: managed = \(self.managedView)")
-  }
-  
   override func viewWillAppear(_ animated: Bool)
   {
     super.viewWillAppear(animated)
-    debug("blue will appear: \(n[0]) \(n[1])")
     n[0] = 0
     n[1] = 0
     
@@ -46,12 +40,12 @@ class BlueViewController: UIViewController, ManagedViewController
   
   @IBAction func green(_ sender:UIButton)
   {
-    debug("go green")
+    container?.present("green")
   }
   
   @IBAction func red(_ sender:UIButton)
   {
-    debug("go red")
+    container?.present("red")
   }
   
   @IBAction func handleClick(_ sender:UIButton)
@@ -62,7 +56,6 @@ class BlueViewController: UIViewController, ManagedViewController
   
   @IBAction func bye(_ sender:UIButton)
   {
-    debug("bye")
     self.dismiss(animated: true) {
       debug("blue dismissed")
     }

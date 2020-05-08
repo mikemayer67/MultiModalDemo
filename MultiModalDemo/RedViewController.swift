@@ -37,12 +37,12 @@ class RedViewController: UIViewController, ManagedViewController
   
   @IBAction func green(_ sender:UIButton)
   {
-    debug("go green")
+    container?.present("green")
   }
   
   @IBAction func blue(_ sender:UIButton)
   {
-    debug("go blue")
+    container?.present("blue")
   }
   
   @IBAction func handleChange(_ sender:UISlider)
@@ -52,7 +52,6 @@ class RedViewController: UIViewController, ManagedViewController
   
   @IBAction func bye(_ sender:UIButton)
   {
-    debug("bye")
     self.dismiss(animated: true) {
       debug("red dismissed")
     }

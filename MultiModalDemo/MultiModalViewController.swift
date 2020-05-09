@@ -69,19 +69,25 @@ protocol MultiModalDelegate
  # Background #
  
  The container view is presented over the current view controller.  This means that its root view controls visibility of the prior view
-  
- * If *MultiModalViewController* is created using a storyboard, the root view defines the background.
- 
+
  * If *MultiModalViewController* is created progromatically, the background color and alpha may be specified in the initializer.
+
+ * If *MultiModalViewController* is created using a storyboard, the root view defined in the storyboard defines the background.  This provides more flexibility in how the background is configured.
  */
 class MultiModalViewController : UIViewController
 {
+  /// Delegate used in the creation and configuration of managed view controllers
   var delegate : MultiModalDelegate?
     
   private var managedViewControllers = [String:ManagedViewController]()
   
+  /// Currently presented managed view controller
   private(set) var current  : ManagedViewController?
   
+  /// Initializer for programatically creating a *MultiModalViewController*
+  ///
+  /// Optinally sets the background color and alpha.  If not specified, these
+  /// default to gray and 75% respectively.
   init(color:UIColor = .gray, alpha:CGFloat = 0.75)
   {
     super.init(nibName: nil, bundle: nil)
@@ -99,6 +105,11 @@ class MultiModalViewController : UIViewController
     if current == nil { self.dismiss(animated: true); return }
   }
   
+  /// Adds or replaces the managed view controller with the specified identifier
+  ///
+  /// If the currently displayed view controller is being replaced, it will be
+  /// replaced and presented immediately.  Otherwise, currently displayed view
+  /// controller will not be changed.
   func add(_ vc:ManagedViewController, for key:String)
   {
     managedViewControllers[key] = vc
@@ -108,6 +119,23 @@ class MultiModalViewController : UIViewController
     if let oldVC = current, oldVC == vc { present(vc) }
   }
   
+  /// Return the managed view controller with the specified identifier
+  ///
+  /// If there is not view controller with the specified identifier,
+  /// *MultModalViewController* will attempt to load it using the
+  /// following steps.
+  ///
+  /// 1. Ask the delegate to provide it using the viewController:for: method
+  ///
+  /// 2. Load it from the same storyboard as the multi modal view controller was loaded
+  ///
+  /// 3. Loat it from the Main storyboard
+  ///
+  /// If successful, the root view of the loaded view controller is set to clear,
+  /// the loaded view controller's *container* property is set to the current
+  /// *MultiModalViewController*, and the delegate's configure::for: method is
+  /// called to allow the delegate to add any additional initial setup of the
+  /// managed view.
   func viewController(for key:String) -> ManagedViewController?
   {
     if let vc = managedViewControllers[key] { return vc }
@@ -127,6 +155,10 @@ class MultiModalViewController : UIViewController
     return vc
   }
   
+  /// Presents the managed view controller with the specified identifier
+  ///
+  /// It may be necessary to create the managed view controller using the
+  /// viewController:for: method
   func present(_ key:String)
   {
     guard let newVC = viewController(for:key) else {
@@ -137,6 +169,12 @@ class MultiModalViewController : UIViewController
     present(newVC)
   }
   
+  /// Presents the specified view controller
+  ///
+  /// If there is currently a managed view controller being displayed,
+  /// a smooth transition from the old view controller to the new
+  /// view controller is made using a location, size, and sontent
+  /// morphing animation
   func present(_ newVC:ManagedViewController)
   {
     if let oldVC = current

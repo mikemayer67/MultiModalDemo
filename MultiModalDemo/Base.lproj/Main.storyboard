@@ -23,10 +23,10 @@
                                     <segment title="Green"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ta6-Jl-Zms">
-                                <rect key="frame" x="172" y="812" width="70" height="30"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ta6-Jl-Zms">
+                                <rect key="frame" x="20" y="812" width="83" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Just Do It"/>
+                                <state key="normal" title="Storyboard"/>
                                 <connections>
                                     <action selector="justDoIt:" destination="Ezw-ls-L4P" eventType="touchUpInside" id="BGV-Z3-O4w"/>
                                 </connections>
@@ -34,38 +34,43 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TJL-dk-EdP">
                                 <rect key="frame" x="0.0" y="115" width="414" height="677"/>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9C-Xe-M2Q">
-                                <rect key="frame" x="350" y="811.5" width="51" height="31"/>
-                                <color key="onTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Storyboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDR-bL-aUb">
-                                <rect key="frame" x="330" y="791.5" width="69" height="15"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7g-fM-5BJ">
+                                <rect key="frame" x="307" y="812" width="87" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Color/Alpha"/>
+                                <connections>
+                                    <action selector="justDoIt:" destination="Ezw-ls-L4P" eventType="touchUpInside" id="Cvs-5i-vrH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCE-cJ-FaG">
+                                <rect key="frame" x="180" y="812" width="54" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Default"/>
+                                <connections>
+                                    <action selector="justDoIt:" destination="Ezw-ls-L4P" eventType="touchUpInside" id="JPE-eC-jx2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ta6-Jl-Zms" firstAttribute="top" secondItem="TJL-dk-EdP" secondAttribute="bottom" constant="20" id="3d5-R6-QgS"/>
                             <constraint firstItem="TJL-dk-EdP" firstAttribute="top" secondItem="tao-tO-3xF" secondAttribute="bottom" constant="20" id="62e-AX-xXt"/>
+                            <constraint firstItem="wCE-cJ-FaG" firstAttribute="centerY" secondItem="ta6-Jl-Zms" secondAttribute="centerY" id="6I6-uV-MKN"/>
+                            <constraint firstItem="ta6-Jl-Zms" firstAttribute="leading" secondItem="gCd-Xv-5xY" secondAttribute="leading" constant="20" id="7Xi-Q9-3Bj"/>
                             <constraint firstItem="tao-tO-3xF" firstAttribute="top" secondItem="gCd-Xv-5xY" secondAttribute="top" constant="20" id="9ub-Jd-Zud"/>
                             <constraint firstItem="tao-tO-3xF" firstAttribute="width" secondItem="qDC-5Q-WPl" secondAttribute="width" multiplier="0.75" id="AxB-mF-2Jj"/>
-                            <constraint firstItem="h9C-Xe-M2Q" firstAttribute="top" secondItem="xDR-bL-aUb" secondAttribute="bottom" constant="5" id="F8R-2U-iFv"/>
-                            <constraint firstItem="xDR-bL-aUb" firstAttribute="trailing" secondItem="h9C-Xe-M2Q" secondAttribute="trailing" id="Ghj-Rm-OKb"/>
+                            <constraint firstItem="gCd-Xv-5xY" firstAttribute="trailing" secondItem="u7g-fM-5BJ" secondAttribute="trailing" constant="20" id="HCi-rl-Jgx"/>
                             <constraint firstItem="tao-tO-3xF" firstAttribute="centerX" secondItem="qDC-5Q-WPl" secondAttribute="centerX" id="Meb-0d-c28"/>
-                            <constraint firstItem="h9C-Xe-M2Q" firstAttribute="centerY" secondItem="ta6-Jl-Zms" secondAttribute="centerY" id="OD8-tk-1iM"/>
-                            <constraint firstItem="ta6-Jl-Zms" firstAttribute="centerX" secondItem="qDC-5Q-WPl" secondAttribute="centerX" id="mA2-6g-uf5"/>
+                            <constraint firstItem="wCE-cJ-FaG" firstAttribute="centerX" secondItem="qDC-5Q-WPl" secondAttribute="centerX" id="R64-mr-v4h"/>
                             <constraint firstItem="gCd-Xv-5xY" firstAttribute="trailing" secondItem="TJL-dk-EdP" secondAttribute="trailing" id="pO3-Vx-QAE"/>
                             <constraint firstItem="TJL-dk-EdP" firstAttribute="leading" secondItem="gCd-Xv-5xY" secondAttribute="leading" id="uCo-YE-eXF"/>
                             <constraint firstItem="gCd-Xv-5xY" firstAttribute="bottom" secondItem="ta6-Jl-Zms" secondAttribute="bottom" constant="20" id="vZn-8M-9aw"/>
-                            <constraint firstItem="gCd-Xv-5xY" firstAttribute="trailing" secondItem="h9C-Xe-M2Q" secondAttribute="trailing" constant="15" id="ziP-j0-qRT"/>
+                            <constraint firstItem="u7g-fM-5BJ" firstAttribute="centerY" secondItem="ta6-Jl-Zms" secondAttribute="centerY" id="vqc-Bh-YON"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gCd-Xv-5xY"/>
                     </view>
                     <connections>
                         <outlet property="modalSelector" destination="tao-tO-3xF" id="T3d-iz-4Ca"/>
-                        <outlet property="useStoryboard" destination="h9C-Xe-M2Q" id="pIu-ss-TUF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6z-yd-rQL" sceneMemberID="firstResponder"/>
@@ -79,7 +84,18 @@
                     <view key="view" contentMode="scaleToFill" id="Mhd-Pi-G0e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="0.248822774" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mmvc" translatesAutoresizingMaskIntoConstraints="NO" id="MNF-2l-X1J">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lIM-pU-hlJ" firstAttribute="bottom" secondItem="MNF-2l-X1J" secondAttribute="bottom" id="UTs-kO-saY"/>
+                            <constraint firstItem="MNF-2l-X1J" firstAttribute="leading" secondItem="lIM-pU-hlJ" secondAttribute="leading" id="j1t-bj-g0H"/>
+                            <constraint firstItem="MNF-2l-X1J" firstAttribute="top" secondItem="lIM-pU-hlJ" secondAttribute="top" id="uHh-7Q-j3h"/>
+                            <constraint firstItem="lIM-pU-hlJ" firstAttribute="trailing" secondItem="MNF-2l-X1J" secondAttribute="trailing" id="vbi-kl-5BC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lIM-pU-hlJ"/>
                     </view>
                 </viewController>
@@ -417,6 +433,7 @@
     <resources>
         <image name="background" width="1168" height="1752"/>
         <image name="doc.circle" catalog="system" width="128" height="121"/>
+        <image name="mmvc" width="250" height="250"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>

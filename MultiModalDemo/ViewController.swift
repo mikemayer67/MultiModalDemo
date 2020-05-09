@@ -13,7 +13,6 @@ func debug(_ args:Any ...)  { print("DEBUG:",args) }
 class ViewController: UIViewController
 {
   @IBOutlet weak var modalSelector: UISegmentedControl!
-  @IBOutlet weak var useStoryboard: UISwitch!
 
   @IBAction func justDoIt(_ sender: UIButton)
   {
@@ -25,17 +24,14 @@ class ViewController: UIViewController
     case 2: id = "green"
     default: return
     }
-        
-    debug("Just Do #\(id!)")
-    
+            
     var mmvc : MultiModalViewController!
-    if useStoryboard.isOn
+    switch sender.tag
     {
-      mmvc = storyboard?.instantiateViewController(identifier: "mmvc") as? MultiModalViewController
-    }
-    else
-    {
-      mmvc = MultiModalViewController()
+    case 1: mmvc = storyboard?.instantiateViewController(identifier: "mmvc") as? MultiModalViewController
+    case 2: mmvc = MultiModalViewController()
+    case 3: mmvc = MultiModalViewController(color: #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1), alpha: 0.50)
+    default:break
     }
     
     guard mmvc != nil else { return }
@@ -46,10 +42,7 @@ class ViewController: UIViewController
     mmvc.modalTransitionStyle = .crossDissolve
     mmvc.modalPresentationStyle = .overFullScreen
     
-    present(mmvc, animated: true) {
-      debug("MMVC presented")
-    }
-    
+    present(mmvc, animated: true)
   }
 }
 

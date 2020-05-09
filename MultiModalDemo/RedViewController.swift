@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate var cachedValues : [Float] = [0.5, 0.5, 0.5, 0.5]
+
 protocol RedViewDelegate
 {
   func completed(_ rvc:RedViewController, x1:Float, y1:Float, x2:Float, y2:Float)
@@ -28,6 +30,11 @@ class RedViewController: UIViewController, ManagedViewController
   
   override func viewWillAppear(_ animated: Bool)
   {
+    slider1.value = cachedValues[0]
+    slider2.value = cachedValues[1]
+    slider3.value = cachedValues[2]
+    slider4.value = cachedValues[3]
+    
     super.viewWillAppear(animated)
     managedView.layer.cornerRadius = 20
     managedView.layer.masksToBounds = true
@@ -48,22 +55,19 @@ class RedViewController: UIViewController, ManagedViewController
   @IBAction func handleChange(_ sender:UISlider)
   {
     delegate?.updated(self, slider: sender.tag, value: sender.value)
+    
+    cachedValues[sender.tag - 1] = sender.value
   }
   
   @IBAction func bye(_ sender:UIButton)
   {
-    self.dismiss(animated: true) {
-      debug("red dismissed")
-    }
+    self.dismiss(animated: true)
   }
   
   @IBAction func ok(_ sender:UIButton)
   {
     delegate?.completed(self, x1: slider1.value, y1: slider2.value, x2: slider3.value, y2: slider4.value)
-    
-    self.dismiss(animated: true) {
-      debug("red complete")
-    }
+    self.dismiss(animated: true)
   }
 
 }

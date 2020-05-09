@@ -41,9 +41,7 @@ class GreenViewController: UIViewController, ManagedViewController
   
   @IBAction func bye(_ sender:UIButton)
   {
-    self.dismiss(animated: true) {
-      debug("green dismissed")
-    }
+    self.dismiss(animated: true)
   }
 
 }

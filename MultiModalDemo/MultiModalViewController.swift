@@ -8,26 +8,79 @@
 
 import UIKit
 
-
+/**
+Protocol that must be implemented by any UIViewController that would be
+ managed by a **MultiModalViewController**
+ 
+ When implementing a UIViewController that conforms to this protocol, you will need to add the content
+ to be displayed as a subview of the root view.
+ 
+ MultiModalViewController uses the root view of your UIViewController soley for determining the location to present your managed view.
+ The root view is **not** displayed.
+ */
 protocol ManagedViewController : UIViewController
 {
+  /// The view to be managed by *MultiModalViewController*
   var managedView : UIView!                   { get }
+  
+  /// The *MultiModalViewController* that is presenting the view
+  ///
+  /// This property is set by the presenting *MultiModalViewController*.  You should not set or modify this value.
   var container   : MultiModalViewController? { get set }
 }
 
+/**
+ Protocol that defines the methods that a *MultiModalViewController* delegate must implement
+ 
+ This delegate provide methods for creating and configuring UIViewControllers that conform to the *ManagedViewController* protocol.
+ */
 protocol MultiModalDelegate
 {
+  /**
+   Creates a UIViewController that conforms to *ManagedViewController* for the specified identifier.
+   
+   This method is invoked if the *MultiModalViewController* is asked to present the *ManagedViewController* associated with the specified identifier that the *MultiModalViewController* does not current manage.
+   
+   If this method returns nil, the *MultiModalViewController* will attempt to load the view controller from storyboard
+   */
   func viewController(_ identifier:String, for container:MultiModalViewController) -> ManagedViewController?
+  
+  /**
+   Invoked after a *ManagedViewController* is added to the *MultiModalViewController*.
+   
+   This method is useful for finalizing configuration of view controllers that were loaded from storyboard.
+   
+   It could, for example, be used to add a delegate to the managed view controller to handle user interaction.
+   */
   func configure(_ vc:ManagedViewController, for container:MultiModalViewController)
 }
 
+/**
+ Container view controller for presenting a modal view controller over the current view.
+ 
+ It's primary purpose is providing smooth transitions between presented modal view controllers.
+ 
+ # Presented Modal Views #
+ 
+ * Only one is shown at a time
+ 
+ * Must conform to *ManagedViewController*
+  
+ # Background #
+ 
+ The container view is presented over the current view controller.  This means that its root view controls visibility of the prior view
+  
+ * If *MultiModalViewController* is created using a storyboard, the root view defines the background.
+ 
+ * If *MultiModalViewController* is created progromatically, the background color and alpha may be specified in the initializer.
+ */
 class MultiModalViewController : UIViewController
 {
   var delegate : MultiModalDelegate?
     
   private var managedViewControllers = [String:ManagedViewController]()
   
-  private(set) var current : ManagedViewController?
+  private(set) var current  : ManagedViewController?
   
   init(color:UIColor = .gray, alpha:CGFloat = 0.75)
   {

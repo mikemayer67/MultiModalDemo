@@ -56,18 +56,14 @@ class BlueViewController: UIViewController, ManagedViewController
   
   @IBAction func bye(_ sender:UIButton)
   {
-    self.dismiss(animated: true) {
-      debug("blue dismissed")
-    }
+    self.dismiss(animated: true)
   }
   
   @IBAction func ok(_ sender:UIButton)
   {
     delegate?.completed(self, n1: n[0], n2: n[1])
     
-    self.dismiss(animated: true) {
-      debug("blue complete")
-    }
+    self.dismiss(animated: true)
   }
 
 }

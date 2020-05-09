@@ -85,16 +85,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mmvc" translatesAutoresizingMaskIntoConstraints="NO" id="MNF-2l-X1J">
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8v1-LN-st9" customClass="GradientView" customModule="MultiModalDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </imageView>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="midColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lIM-pU-hlJ" firstAttribute="bottom" secondItem="MNF-2l-X1J" secondAttribute="bottom" id="UTs-kO-saY"/>
-                            <constraint firstItem="MNF-2l-X1J" firstAttribute="leading" secondItem="lIM-pU-hlJ" secondAttribute="leading" id="j1t-bj-g0H"/>
-                            <constraint firstItem="MNF-2l-X1J" firstAttribute="top" secondItem="lIM-pU-hlJ" secondAttribute="top" id="uHh-7Q-j3h"/>
-                            <constraint firstItem="lIM-pU-hlJ" firstAttribute="trailing" secondItem="MNF-2l-X1J" secondAttribute="trailing" id="vbi-kl-5BC"/>
+                            <constraint firstItem="lIM-pU-hlJ" firstAttribute="trailing" secondItem="8v1-LN-st9" secondAttribute="trailing" id="MfF-nb-8jo"/>
+                            <constraint firstItem="8v1-LN-st9" firstAttribute="leading" secondItem="lIM-pU-hlJ" secondAttribute="leading" id="Tqa-dG-pOd"/>
+                            <constraint firstItem="lIM-pU-hlJ" firstAttribute="bottom" secondItem="8v1-LN-st9" secondAttribute="bottom" id="Z77-vr-SBn"/>
+                            <constraint firstItem="8v1-LN-st9" firstAttribute="top" secondItem="Mhd-Pi-G0e" secondAttribute="top" id="zTm-yt-CEg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lIM-pU-hlJ"/>
                     </view>
@@ -433,7 +445,6 @@
     <resources>
         <image name="background" width="1168" height="1752"/>
         <image name="doc.circle" catalog="system" width="128" height="121"/>
-        <image name="mmvc" width="250" height="250"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>

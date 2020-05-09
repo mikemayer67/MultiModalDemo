@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		277CC4B824671385001C5404 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CC4B724671385001C5404 /* GradientView.swift */; };
 		278BD3B6246520BA00BB60CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BD3B5246520BA00BB60CD /* AppDelegate.swift */; };
 		278BD3B8246520BA00BB60CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BD3B7246520BA00BB60CD /* SceneDelegate.swift */; };
 		278BD3BA246520BA00BB60CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BD3B9246520BA00BB60CD /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		277CC4B724671385001C5404 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		278BD3B2246520BA00BB60CD /* MultiModalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiModalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278BD3B5246520BA00BB60CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		278BD3B7246520BA00BB60CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				278BD3CA246520F100BB60CD /* BlueViewController.swift */,
 				278BD3CF2465267000BB60CD /* GreenViewController.swift */,
 				278BD3CB246520F100BB60CD /* MultiModalViewController.swift */,
+				277CC4B724671385001C5404 /* GradientView.swift */,
 			);
 			path = MultiModalDemo;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				278BD3B6246520BA00BB60CD /* AppDelegate.swift in Sources */,
 				278BD3CD246520F100BB60CD /* BlueViewController.swift in Sources */,
 				278BD3B8246520BA00BB60CD /* SceneDelegate.swift in Sources */,
+				277CC4B824671385001C5404 /* GradientView.swift in Sources */,
 				278BD3D02465267000BB60CD /* GreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -148,6 +148,12 @@ class MultiModalViewController : UIViewController
       self.view.addSubview(newVC.view)
       newVC.didMove(toParent: self)
       
+      newVC.view.translatesAutoresizingMaskIntoConstraints = false
+      newVC.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+      newVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+      newVC.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+      newVC.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+      
       guard let oldView = oldVC.managedView else { assertionFailure("oldVC missing managed view"); return  }
       guard let newView = newVC.managedView else { assertionFailure("newVC missing managed view"); return  }
          
@@ -203,6 +209,12 @@ class MultiModalViewController : UIViewController
       newVC.view.frame = self.view.frame
       self.view.addSubview(newVC.view)
       newVC.didMove(toParent: self)
+      
+      newVC.view.translatesAutoresizingMaskIntoConstraints = false
+      newVC.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+      newVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+      newVC.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+      newVC.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     current = newVC
   }
